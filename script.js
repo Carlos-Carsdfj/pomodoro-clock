@@ -84,8 +84,8 @@ $start.addEventListener('click',()=>{
     min = timeInitial
     sec = 0
 
-    control = setInterval(ponte, 1000)
     isRun = true
+    control = setInterval(ponte, 10)
 
 })
 
@@ -120,14 +120,16 @@ const ponte = ()=>{
         $reloj.innerHTML = '0'+min+':0'+sec
         clearInterval(control)
         darTonify()
+        isRun= false
         document.title =  '0'+min+':0'+sec
     }
 
 
-        
-        if( min <= 10 & sec === 0){
+       if(isRun ){
 
-            min = min-1
+           if( min <= 10 & sec === 0){
+               
+               min = min-1
             sec = 59
             $reloj.innerHTML = '0'+min+':'+sec
             document.title = '0'+min+':'+sec
@@ -155,7 +157,7 @@ const ponte = ()=>{
 
 
 
-   
+        
 
         if(min>10 & sec === 0){
 
@@ -165,16 +167,16 @@ const ponte = ()=>{
             document.title  = min+':'+sec
             return
         }
-
+        
         if(min>10 & sec>10 ){
-
+            
             sec = sec-1
             $reloj.innerHTML = min+':'+sec
             document.title  = min+':'+sec
             return
-        
+            
         }
-
+        
         if(min>10 & sec>0 & sec < 11){
             sec = sec-1
             $reloj.innerHTML = min+':0'+sec
@@ -183,10 +185,11 @@ const ponte = ()=>{
         }
         
         
-   
-
-
-
+        
+    } 
+        
+        
+        
 }
 
 
