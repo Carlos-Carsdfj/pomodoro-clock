@@ -85,7 +85,7 @@ $start.addEventListener('click',()=>{
     sec = 0
 
     isRun = true
-    control = setInterval(ponte, 10)
+    control = setInterval(ponte, 1000)
 
 })
 
